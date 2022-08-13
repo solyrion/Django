@@ -8,7 +8,7 @@ request 인자는 뭐지?? 말그대로 사용자가 보낸 내용?을 받는 �
 request.GET, request.POST, request.COOKIE -> 보내는 방식(사전형 데이터)에 따라 받는 방식이 달라짐.
 """
 def index(request):
-    return HttpResponse("Onememos~ Hello, Wolrd!!")
+    return HttpResponse("Onememos~ Hello, Wolrd!! 12341234")
 
 def createMemo(request):
     memoContent = request.GET['memoContent']
