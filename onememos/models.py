@@ -20,6 +20,9 @@ class Memo(models.Model):
     memo_text = models.CharField(max_length=200)
     published_date = models.DateTimeField(auto_now_add=True)
 
+    def __str__(self):
+        return self.memo_text # 메모 작성하면 제목으로 바로 뜸. (memo object)으로 안뜨고.
+
 """
 작성후 -> 반영을 해줘야함 -> 어디에? -> admin 사이트에 -> admin.py열고 추가작성
 
