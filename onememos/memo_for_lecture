@@ -5,3 +5,13 @@
         -즉, onememo 앱의 경우 하위에 templates 폴더 생성하면 별다를 설정없이 바로 템플릿 디렉토리 인식.
         -서버 재시작도 필요.(python manage.py runserver)
 
+
+
+DB 터미널에서 조작:
+      - python manage.py dbshell로 입장
+      - select * from onememos_memo; -> 관리자모드에서 onememos에 생성된 글 나옴
+      - *** 테이블명은 models.py에 class memo라고 했다고 memo아님...
+      - *** onememos_memo -> 앱이름_ 을 붙여줘야됨.
+      - UPDATE onememos_memo SET memo_text = 'who are you?' WHERE id=1; (수정도 가능)
+
+

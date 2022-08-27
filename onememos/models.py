@@ -14,7 +14,7 @@ from django.db import models
 # published_date (예시)
 
 class Memo(models.Model):
-    # 자체 메소드 내부적으로 조건에 맞는 table 생성
+    # 자체 메소드 내부적으로 조건에 맞는 table(이름 = 앱이름_class(onememos_Memo) 생성
     # CharField -> 가능한 문자열의 제한이 있음 TextField는 없음
     # auto_now_add = True -> 자동으로 작성된 시간/날짜를 입력시킴.
     memo_text = models.CharField(max_length=200)
