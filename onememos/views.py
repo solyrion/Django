@@ -21,14 +21,17 @@ def index(request):
     # 이미 onememos까지 path설정이기에 '템플릿 경로'안에 쓸 필요 없음. 또한 templates폴더는 직접적으로 경로에 언급 x
     return render(request, 'main.html')
 
-
 def createMemo(request):
     """
     request 인자는 뭐지?? 말그대로 사용자가 보낸 내용?을 받는 인자
     -> request객체는 사용자가 폼 페이지를 통해서 입력한 폼 데이터 값들을 받는다.(포수느낌)
     request.GET, request.POST, request.COOKIE -> 보내는 방식(사전형 데이터)에 따라 받는 방식이 달라짐.
+    서버의 특정주소에 보내는 방식은 = POST (회원가입 / 게시판)
     """
-    memoContent = request.GET['memoContent']
+    # memoContent = request.GET['memoContent']
+    memoContent = request.POST['memoContent']
+
+
     return HttpResponse("Create Memo="+memoContent)
 
 
@@ -36,6 +39,11 @@ def createMemo(request):
 '''
 1. 뷰페이지 템플릿 꾸미기(Form) --> 입력과 출력
 2. 템플릿 파일의 목적(용도)
+            - 뷰페이지 처리 --> 템플릿 파일
+            - 개발과 디자인의 분리
+            - 개발자 코드 vs 디자이너(HTML, CSS) 코드 --> 문제발생.. 분리필요
+            - 다른 프레임워크들에서도 보통 template(s) 이라는 폴더명을 만들어 템플릿 폴더로 인식시켜서 사용.
+            - 아무튼 디자니어(뷰페이지 담당자) 입장에서는 템플릿 언어의 고유문법이나 태그 공부필요
 3. 관리자모드에서의 DB 조작 vs 터미널 명령 프롬프트에서의 DB조작(sqlite, dbshell)
             - 이 과정에서 오류가 발생하곤 한다 -> 이때 -> 어떻게 처리해줘야 하는지에 대해서 체크.
             - sqlite  tool 설치가 안되서 나는 오류.

@@ -2,7 +2,7 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    #localhost:8000/onememos/
+    #localhost:8000/onememos/createMemo/
     path('', views.index, name='index'),
     path('createMemo/', views.createMemo),
     #localhost:8000/onememos/createMemo/?memoContent=대한민국 url에 바로 치는것
