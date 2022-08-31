@@ -17,6 +17,7 @@
     <body>
         <h1>Onememo Form</h1>
         <form action = "http://localhost:8000/onememos/createMemo/" method="POST" id="memoWriteForm">
+        {% csrf_token %}
             <label for = "memo">한 줄 메모 입력</label>
             <input type="text" id = "memo" name="memoContent" size="100" placeholder="한 줄 메모를 입력하세요!" autocomplete="off">
         </form>

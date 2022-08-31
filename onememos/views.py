@@ -31,7 +31,6 @@ def createMemo(request):
     # memoContent = request.GET['memoContent']
     memoContent = request.POST['memoContent']
 
-
     return HttpResponse("Create Memo="+memoContent)
 
 
